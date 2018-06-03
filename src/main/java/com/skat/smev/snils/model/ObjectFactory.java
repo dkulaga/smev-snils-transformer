@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the snils package.
+ * generated in the snils_new package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -42,66 +42,26 @@ public class ObjectFactory {
     private final static QName _IdentityDocument_QNAME = new QName("urn://x-artefacts-smev-gov-ru/supplementary/commons/1.0.1", "IdentityDocument");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: snils
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: snils_new
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link SnilsByDataRequest }
+     * Create an instance of {@link SnilsByAdditionalDataResponse }
      * 
      */
-    public SnilsByDataRequest createSnilsByDataRequest() {
-        return new SnilsByDataRequest();
+    public SnilsByAdditionalDataResponse createSnilsByAdditionalDataResponse() {
+        return new SnilsByAdditionalDataResponse();
     }
 
     /**
-     * Create an instance of {@link SnilsByDataResponse }
+     * Create an instance of {@link BirthPlaceType }
      * 
      */
-    public SnilsByDataResponse createSnilsByDataResponse() {
-        return new SnilsByDataResponse();
-    }
-
-    /**
-     * Create an instance of {@link TwinDataType }
-     * 
-     */
-    public TwinDataType createTwinDataType() {
-        return new TwinDataType();
-    }
-
-    /**
-     * Create an instance of {@link NotRestrictedDocumentType }
-     * 
-     */
-    public NotRestrictedDocumentType createNotRestrictedDocumentType() {
-        return new NotRestrictedDocumentType();
-    }
-
-    /**
-     * Create an instance of {@link SovietPassportType }
-     * 
-     */
-    public SovietPassportType createSovietPassportType() {
-        return new SovietPassportType();
-    }
-
-    /**
-     * Create an instance of {@link PrimaryIdentityDocumentType }
-     * 
-     */
-    public PrimaryIdentityDocumentType createPrimaryIdentityDocumentType() {
-        return new PrimaryIdentityDocumentType();
-    }
-
-    /**
-     * Create an instance of {@link MilitaryPassportDocumentType }
-     * 
-     */
-    public MilitaryPassportDocumentType createMilitaryPassportDocumentType() {
-        return new MilitaryPassportDocumentType();
+    public BirthPlaceType createBirthPlaceType() {
+        return new BirthPlaceType();
     }
 
     /**
@@ -113,11 +73,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DrivingLicenseRFType }
+     * Create an instance of {@link NotRestrictedDocumentType }
      * 
      */
-    public DrivingLicenseRFType createDrivingLicenseRFType() {
-        return new DrivingLicenseRFType();
+    public NotRestrictedDocumentType createNotRestrictedDocumentType() {
+        return new NotRestrictedDocumentType();
     }
 
     /**
@@ -126,6 +86,54 @@ public class ObjectFactory {
      */
     public InternationalPassportRFType createInternationalPassportRFType() {
         return new InternationalPassportRFType();
+    }
+
+    /**
+     * Create an instance of {@link MilitaryPassportDocumentType }
+     * 
+     */
+    public MilitaryPassportDocumentType createMilitaryPassportDocumentType() {
+        return new MilitaryPassportDocumentType();
+    }
+
+    /**
+     * Create an instance of {@link SovietPassportType }
+     * 
+     */
+    public SovietPassportType createSovietPassportType() {
+        return new SovietPassportType();
+    }
+
+    /**
+     * Create an instance of {@link DrivingLicenseRFType }
+     * 
+     */
+    public DrivingLicenseRFType createDrivingLicenseRFType() {
+        return new DrivingLicenseRFType();
+    }
+
+    /**
+     * Create an instance of {@link IdentificationDocumentType }
+     * 
+     */
+    public IdentificationDocumentType createIdentificationDocumentType() {
+        return new IdentificationDocumentType();
+    }
+
+    /**
+     * Create an instance of {@link SnilsByAdditionalDataRequest }
+     * 
+     */
+    public SnilsByAdditionalDataRequest createSnilsByAdditionalDataRequest() {
+        return new SnilsByAdditionalDataRequest();
+    }
+
+    /**
+     * Create an instance of {@link PrimaryIdentityDocumentType }
+     * 
+     */
+    public PrimaryIdentityDocumentType createPrimaryIdentityDocumentType() {
+        return new PrimaryIdentityDocumentType();
     }
 
     /**
@@ -142,22 +150,6 @@ public class ObjectFactory {
      */
     public AnyIdentityDocumentType createAnyIdentityDocumentType() {
         return new AnyIdentityDocumentType();
-    }
-
-    /**
-     * Create an instance of {@link IdentificationDocumentType }
-     * 
-     */
-    public IdentificationDocumentType createIdentificationDocumentType() {
-        return new IdentificationDocumentType();
-    }
-
-    /**
-     * Create an instance of {@link BirthPlaceType }
-     * 
-     */
-    public BirthPlaceType createBirthPlaceType() {
-        return new BirthPlaceType();
     }
 
     /**

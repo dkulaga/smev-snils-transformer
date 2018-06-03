@@ -1,7 +1,6 @@
 package com.skat.smev.snils.util;
 
-import com.skat.smev.snils.model.SnilsByDataRequest;
-import com.skat.smev.snils.model.SnilsByDataResponse;
+import com.skat.smev.snils.model.SnilsByAdditionalDataRequest;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -34,10 +33,10 @@ public class XmlUtil {
 		return sw.toString();
 	}
 
-	public static String jaxbObjectToXML(SnilsByDataRequest request) {
+	public static String jaxbObjectToXML(SnilsByAdditionalDataRequest request) {
 		String xmlString = "";
 		try {
-			JAXBContext context = JAXBContext.newInstance(SnilsByDataRequest.class);
+			JAXBContext context = JAXBContext.newInstance(SnilsByAdditionalDataRequest.class);
 			Marshaller m = context.createMarshaller();
 
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE); // To format XML

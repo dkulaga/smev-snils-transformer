@@ -12,6 +12,8 @@ public class RequestModel {
 	private String patronymic;
 	private Gender gender;
 	private String birthDate;
+	private BirthPlace birthPlace;
+	private IdentityDocument identityDocument;
 
 	public String getFamilyName() {
 		return familyName;
@@ -51,5 +53,21 @@ public class RequestModel {
 
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	public BirthPlace getBirthPlace() {
+		return birthPlace;
+	}
+
+	public void setBirthPlace(BirthPlace birthPlace) {
+		this.birthPlace = birthPlace;
+	}
+
+	public IdentityDocument getIdentityDocument() {
+		return identityDocument;
+	}
+
+	public void setIdentityDocument(IdentityDocument identityDocument) {
+		this.identityDocument = identityDocument;
 	}
 }

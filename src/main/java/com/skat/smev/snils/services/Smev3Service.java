@@ -2,8 +2,8 @@ package com.skat.smev.snils.services;
 
 
 import com.skat.smev.snils.domain.*;
-import com.skat.smev.snils.model.SnilsByDataRequest;
-import com.skat.smev.snils.model.SnilsByDataResponse;
+import com.skat.smev.snils.model.SnilsByAdditionalDataRequest;
+import com.skat.smev.snils.model.SnilsByAdditionalDataResponse;
 import com.skat.smev.snils.transmitter.impl.ResponseTransmitterService;
 import com.skat.smev.snils.transmitter.impl.Smev3AdapterService;
 import com.skat.smev.snils.util.JsonUtil;
@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.DatatypeConverter;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import java.nio.charset.Charset;
@@ -109,14 +108,14 @@ public class Smev3Service {
     private String createXmlFromModel(RequestModel model) throws JAXBException,
             ParseException, DatatypeConfigurationException {
         SnilsRequestTransformer snilsRequestTransformer = new SnilsRequestTransformer();
-        SnilsByDataRequest element = snilsRequestTransformer.createSnilsByDataRequest(model);
+        SnilsByAdditionalDataRequest element = snilsRequestTransformer.createSnilsAdditionalByDataRequest(model);
         String xml = XmlUtil.jaxbObjectToXML(element);
         return xml;
     }
 
     /**
      * Метод выполняет преобразование ответа от СМЭВ-адаптера
-     * из формата {@link SnilsByDataResponse} в формат {@link BaseMessageModel}
+     * из формата {@link SnilsByAdditionalDataRequest} в формат {@link BaseMessageModel}
      * @param adapterResponseModel ответ от СМЭВ-адаптера
      * @return формированный ответ для дальнейшей отправки в ВИС
      * @throws Exception
@@ -128,7 +127,7 @@ public class Smev3Service {
         if(adapterResponseModel.getResponse() != null){
             String xml = getXmlFromBase64(adapterResponseModel.getResponse());
             SnilsRequestTransformer snilsRequestTransformer = new SnilsRequestTransformer();
-            SnilsByDataResponse responseType = snilsRequestTransformer.parseContent(xml);
+            SnilsByAdditionalDataResponse responseType = snilsRequestTransformer.parseContent(xml);
             String responseNumber = String.valueOf(responseType.getSnils());
             ResponseMessageModel responseMessageModel = new ResponseMessageModel();
             responseMessageModel.setResponseNumber(responseNumber);
