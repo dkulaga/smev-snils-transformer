@@ -5,6 +5,7 @@ import com.skat.smev.snils.model.SnilsByAdditionalDataRequest;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.nio.charset.Charset;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
@@ -56,7 +57,7 @@ public class XmlUtil {
 			throws JAXBException {
 		JAXBContext context = JAXBContext.newInstance(type);
 		Unmarshaller unmarshaller = context.createUnmarshaller();
-		InputStream is = new ByteArrayInputStream(xml.getBytes());
+		InputStream is = new ByteArrayInputStream(xml.getBytes(Charset.forName("UTF-8")));
 		return unmarshaller.unmarshal(new StreamSource(is), type).getValue();
 	}
 
